@@ -1,0 +1,15 @@
+.loadMoreBtn {
+  padding: 12px 30px;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+
+  background-color: blue;
+  color: yellow;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+.loadMoreBtn:hover {
+  box-shadow: 0 0 12px 10px rgba(70, 124, 240, 0.918);
+}

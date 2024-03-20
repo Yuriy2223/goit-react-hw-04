@@ -1,0 +1,9 @@
+.text {
+  background-color: yellow;
+  color: blue;
+  padding: 10px;
+  border: 1px solid blue;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1;
+}
