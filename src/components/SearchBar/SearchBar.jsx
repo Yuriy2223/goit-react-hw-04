@@ -1,18 +1,17 @@
 import { useState } from "react";
 import styles from "./SearchBar.module.css";
 import { FaSearch } from "react-icons/fa";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SearchBar = ({ onSubmit }) => {
   const [input, setInput] = useState("");
-  const [error, setError] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (input.trim() === "") {
-      setError("Type text before searching");
-      setTimeout(() => setError(""), 3000);
+      toast.error("Type text before searching", { className: "custom-toast" });
     } else {
-      setError("");
       onSubmit(input);
     }
   };
@@ -31,8 +30,8 @@ const SearchBar = ({ onSubmit }) => {
           placeholder="Search images and photos"
           onChange={(event) => setInput(event.target.value)}
         />
-        {error && <p className={styles.error}>{error}</p>}
       </form>
+      <ToastContainer />
     </header>
   );
 };

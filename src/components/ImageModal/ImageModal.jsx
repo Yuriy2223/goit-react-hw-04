@@ -2,18 +2,25 @@ import Modal from "react-modal";
 import { MdOutlineClose } from "react-icons/md";
 import styles from "./ImageModal.module.css";
 
-const ImageModal = ({ image, isOpen, onClose }) => (
+const ImageModal = ({
+  src,
+  alt,
+  author,
+  comments,
+  likes,
+  description,
+  isOpen,
+  onClose,
+}) => (
   <Modal className={styles.modal} isOpen={isOpen} onRequestClose={onClose}>
-    <img
-      className={styles.img}
-      src={image.urls.regular}
-      alt={image.alt_description}
-      onClick={onClose}
-    />
+    <img className={styles.img} src={src} alt={alt} onClick={onClose} />
     <div className={styles.info}>
-      <h2 className={styles.author}>{`Аuthor: ${image.user.name}`}</h2>
-      <p className={styles.comment}>{`Comment: ${image.description}`}</p>
-      <p className={styles.likes}>{`Likes: ${image.likes}`}</p>
+      <div className={styles.author}>Аuthor: {author}</div>
+      <div className={styles.description}>Description: {description}</div>
+      <div className={styles.comment}>Comment: {comments}</div>
+      <div className={styles.likes}>
+        Likes: <span className={styles.likesCount}>{likes}</span>
+      </div>
     </div>
     <button className={styles.closeBtn} onClick={onClose}>
       <MdOutlineClose className={styles.svg} />
@@ -22,3 +29,4 @@ const ImageModal = ({ image, isOpen, onClose }) => (
 );
 
 export default ImageModal;
+

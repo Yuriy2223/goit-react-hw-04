@@ -26,14 +26,20 @@
   font-weight: 500;
 }
 
-.comment {
+.description {
   margin-top: 10px;
   height: 50px;
   overflow: auto;
 }
-
+/* 
+.comment {
+}
 .likes {
-  font-weight: 500;
+} */
+
+.likesCount{
+  color: red;
+  
 }
 
 .closeBtn {
